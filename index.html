@@ -1063,7 +1063,7 @@ function renderGrid(cat,catName){
   grid.innerHTML=items.map((p,i)=>`
     <div class="proj-card" onclick="openProjectVideo('${p.ytId}','${p.title.replace(/'/g,"\\'")}','${catName}','${p.tags.replace(/'/g,"\\'")}')">
       <div class="proj-thumb" style="background:${p.bg}">
-        <div class="proj-thumb-lbl">${p.title}</div>
+        <div class="proj-thumb" style="background:${p.bg};background-image:${p.ytId?'url(https://img.youtube.com/vi/'+p.ytId+'/maxresdefault.jpg)':''};background-size:cover;background-position:center">
         <div class="proj-hover">
           <div class="proj-play-ring"><div class="proj-play-tri"></div></div>
           <div class="proj-play-txt">Play</div>
