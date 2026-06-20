@@ -1069,21 +1069,20 @@ grid.style.width='100%';
 grid.style.gridTemplateColumns='repeat(3,1fr)';
 grid.style.gap='1.2rem';
   grid.innerHTML=items.map((p,i)=>`
-    <div class="proj-card" onclick="openProjectVideo('${p.ytId}','${p.title.replace(/'/g,"\\'")}','${catName}','${p.tags.replace(/'/g,"\\'")}')">
-      <div class="proj-thumb" style="background:${p.bg}">
-        <div class="proj-thumb" style="background:${p.bg};background-image:${p.ytId?'url(https://img.youtube.com/vi/'+p.ytId+'/maxresdefault.jpg)':''};background-size:cover;background-position:center">
-        <div class="proj-hover">
-          <div class="proj-play-ring"><div class="proj-play-tri"></div></div>
-          <div class="proj-play-txt">Play</div>
-        </div>
-      </div>
-      <div class="proj-info">
-        <div class="proj-cat-tag">${catName}</div>
-        <div class="proj-title">${p.title}</div>
-        <div class="proj-tags">${p.tags.split('·').map(t=>`<span class="ptag">${t.trim()}</span>`).join('')}</div>
+  <div class="proj-card" onclick="openProjectVideo('${p.ytId}','${p.title.replace(/'/g,"\\'")}','${catName}','${p.tags.replace(/'/g,"\\'")}')">
+    <div class="proj-thumb" style="background:${p.bg};background-image:${p.ytId?'url(https://img.youtube.com/vi/'+p.ytId+'/maxresdefault.jpg)':''};background-size:cover;background-position:center">
+      <div class="proj-hover">
+        <div class="proj-play-ring"><div class="proj-play-tri"></div></div>
+        <div class="proj-play-txt">Play</div>
       </div>
     </div>
-  `).join('');
+    <div class="proj-info">
+      <div class="proj-cat-tag">${catName}</div>
+      <div class="proj-title">${p.title}</div>
+      <div class="proj-tags">${p.tags.split('  ').map(t=>`<span class="ptag">${t.trim()}</span>`).join('')}</div>
+    </div>
+  </div>
+`).join('');
   // make grid and header visible
   setTimeout(()=>{
     grid.classList.add('vis');
