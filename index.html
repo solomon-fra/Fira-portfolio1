@@ -1015,7 +1015,7 @@ document.querySelectorAll('.reveal').forEach(r=>obs.observe(r));
     ||window.matchMedia('(pointer:coarse)').matches
     ||(navigator.hardwareConcurrency&&navigator.hardwareConcurrency<=4);
 
-  const renderer=new THREE.WebGLRenderer({canvas,antialias:!isLowPower,alpha:true,powerPreference:'low-power'});
+  const renderer=new THREE.WebGLRenderer({canvas,antialias:!isLowPower,alpha:true,powerPreference:isLowPower?'low-power':'high-performance'});
   renderer.setSize(W,H);
   renderer.setPixelRatio(Math.min(window.devicePixelRatio,isLowPower?1:2));
   renderer.outputEncoding=THREE.sRGBEncoding;
