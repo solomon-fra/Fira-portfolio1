@@ -13,35 +13,35 @@
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 
 :root{
-  --bg:#B3C6C4;
-  --bg2:#9ab4b2;
-  --fg:#0B2433;
-  --fg2:#1a3a4a;
-  --muted:#548683;
-  --muted2:#8ab0ae;
-  --accent:#2546D1;
-  --accent2:#1a35b0;
+  --bg:#F4F3EE;
+  --bg2:#eae8e0;
+  --fg:#0A0A0A;
+  --fg2:#1a1a1a;
+  --muted:#898985;
+  --muted2:#b8b6ae;
+  --accent:#2040F2;
+  --accent2:#1730c4;
   --gold:#F1D089;
   --card:#ffffff;
-  --card-border:rgba(11,36,51,0.1);
-  --border:rgba(11,36,51,0.1);
-  --shadow:rgba(11,36,51,0.08);
-  --dark:#0B2433;
-  --vhs:#1a3a4a;
-  --vhs-label:#1a35b0;
+  --card-border:rgba(10,10,10,0.08);
+  --border:rgba(10,10,10,0.08);
+  --shadow:rgba(10,10,10,0.08);
+  --dark:#0A0A0A;
+  --vhs:#1a1a1a;
+  --vhs-label:#f0ede6;
 }
 [data-theme="dark"]{
-  --bg:#0B2433;
-  --bg2:#0d2a3a;
-  --fg:#B3C6C4;
-  --fg2:#8ab0ae;
-  --muted:#548683;
-  --muted2:#2a4a5a;
-  --accent:#2546D1;
-  --accent2:#1a35b0;
-  --card:#0d2a3a;
-  --card-border:rgba(179,198,196,0.08);
-  --border:rgba(179,198,196,0.08);
+  --bg:#0A0A0A;
+  --bg2:#141414;
+  --fg:#F4F3EE;
+  --fg2:#d8d6cd;
+  --muted:#8a8a85;
+  --muted2:#4a4a47;
+  --accent:#2040F2;
+  --accent2:#1730c4;
+  --card:#141414;
+  --card-border:rgba(244,243,238,0.08);
+  --border:rgba(244,243,238,0.08);
   --shadow:rgba(0,0,0,0.4);
   --dark:#B3C6C4;
   --vhs:#1a3a4a;
@@ -127,12 +127,12 @@ nav.scrolled{background:rgba(179,198,196,.95);backdrop-filter:blur(20px);padding
 .btn-outline:hover{border-color:var(--fg);color:var(--fg)}
 
 /* DICE HERO */
-.hero-right{display:flex;align-items:center;justify-content:center;position:relative;opacity:0;animation:fadeUp 1s .5s forwards}
+.hero-right{display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;opacity:0;animation:fadeUp 1s .5s forwards}
 .dice-container{position:relative;width:480px;height:520px;display:flex;align-items:center;justify-content:center;perspective:1200px}
 .css-vhs{display:block;position:relative;width:360px;height:220px;transform-style:preserve-3d;animation:vhsSpin 12s linear infinite;cursor:pointer;text-decoration:none}
 .css-vhs:hover{animation-play-state:paused}
 .css-vhs .face{position:absolute;width:360px;height:220px;border-radius:8px;background:var(--accent);border:1px solid rgba(255,255,255,.18);box-shadow:inset 0 0 0 1px rgba(255,255,255,.08)}
-.css-vhs .front{transform:translateZ(63px);padding:18px 22px;box-sizing:border-box}
+.css-vhs .front{transform:translateZ(63px);padding:18px 22px;box-sizing:border-box;background-image:linear-gradient(155deg,rgba(37,70,209,.35),rgba(10,15,40,.55)),url(images/vhs-shell.webp);background-size:cover;background-position:center;border-radius:8px}
 .css-vhs .back{transform:translateZ(-63px) rotateY(180deg)}
 .css-vhs .right{width:126px;transform:rotateY(90deg) translateZ(180px);left:117px}
 .css-vhs .left{width:126px;transform:rotateY(-90deg) translateZ(180px);left:117px}
@@ -653,18 +653,7 @@ footer{border-top:1px solid var(--border);padding:2.5rem 5rem;display:flex;justi
     <div class="hero-right" id="heroRight">
       <div class="dice-container">
         <a href="#work" class="css-vhs" aria-label="view my work">
-          <div class="face front">
-            <div class="vhs-reels">
-              <div class="vhs-reel"></div>
-              <div class="vhs-reel"></div>
-            </div>
-            <div class="vhs-window"></div>
-            <div class="vhs-label-strip">
-              <span class="vhs-label">fraol<span class="dot">.</span></span>
-              <span class="vhs-play">▶ PLAY</span>
-            </div>
-            <div class="vhs-stripe"></div>
-          </div>
+          <div class="face front"></div>
           <div class="face back"></div>
           <div class="face right"></div>
           <div class="face left"></div>
